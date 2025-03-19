@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Places in India</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"rel = "stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+    background: linear-gradient(to right, #ffcc00, #ff6600);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2x;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+        .filter-container {
+            text-align: center;
+            margin: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .place {
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        .place img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .place h2 {
+            color: #333;
+        }
+        /* Hover effect */
+        .place:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.footer-container a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer-container a:hover {
+    text-decoration: underline;
+}
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+}
+
+
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Historical Places in India
+    </header>
+
+    <!-- Filter Dropdown -->
+    <div class="filter-container">
+        <label for="filter">Filter by Location:</label>
+        <select id="filter" onchange="filterPlaces()">
+            <option value="all">All</option>
+            <option value="agra">Agra</option>
+            <option value="delhi">Delhi</option>
+            <option value="jaipur">Jaipur</option>
+            <option value="karnataka">Karnataka</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="hyderabad">Hyderabad</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="place" data-location="agra">
+            <h2>Taj Mahal, Agra</h2>
+            <img src="https://i1.wp.com/worldupclose.in/wp-content/uploads/2020/03/taj.jpg" alt="Taj Mahal">
+            <p>The Taj Mahal, built by Mughal Emperor Shah Jahan, is an epitome of love and a UNESCO World Heritage site.</p>
+        </div>
+
+        <div class="place" data-location="delhi">
+            <h2>Qutub Minar, Delhi</h2>
+            <img src="https://th.bing.com/th/id/OIP.9NEPFoackmkQEAMPD7Ih3gHaFj?rs=1&pid=ImgDetMain" alt="Qutub Minar">
+            <p>The Qutub Minar is a UNESCO World Heritage Site and the tallest brick minaret in the world.</p>
+        </div>
+
+        <div class="place" data-location="jaipur">
+            <h2>Hawa Mahal, Jaipur</h2>
+            <img src="https://cdn.getyourguide.com/img/tour/0a3b64347720bead.jpeg/98.jpg" alt="Hawa Mahal">
+            <p>The Hawa Mahal, or "Palace of Winds," is an architectural marvel in Jaipur built for royal women to observe street festivities.</p>
+        </div>
+
+        <div class="place" data-location="karnataka">
+            <h2>Mysore Palace, Karnataka</h2>
+            <img src="http://3.bp.blogspot.com/_hEeDlsg8wA4/TT6L8hncQhI/AAAAAAAADGU/XWItBDceBBA/s1600/11hto3p.jpg" alt="Mysore Palace">
+            <p>The Mysore Palace is a historical and architectural landmark, known for its intricate design and grand illumination during the Dussehra festival.</p>
+        </div>
+
+        <div class="place" data-location="mumbai">
+            <h2>Gateway of India, Mumbai</h2>
+            <img src="https://th.bing.com/th/id/OIP.ljt4u_c6wmhIJtoLYN-NWQHaFb?rs=1&pid=ImgDetMain" alt="Gateway of India">
+            <p>The Gateway of India is an iconic monument built during the 20th century in Mumbai, serving as a major tourist attraction and a historical landmark.</p>
+        </div>
+
+        <div class="place" data-location="hyderabad">
+            <h2>Charminar, Hyderabad</h2>
+            <img src="https://thumbs.dreamstime.com/b/charminar-hyderbad-monument-mosque-charminar-constructed-monument-mosque-located-hyderabad-telangana-india-138091824.jpg" alt="Charminar">
+            <p>Charminar, located in Hyderabad, India, is a historic monument known for its stunning Indo-Islamic architecture and four grand arches.</p>
+        </div>
+    </div>
+        <footer>
+                <div class="footer-container">
+                    <p>© 2025 Historical Places in India | All Rights Reserved.</p>
+                    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/020/964/386/large_2x/facebook-circle-icon-for-web-design-free-png.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/018/930/745/non_2x/twitter-logo-twitter-icon-transparent-free-free-png.png" alt="Twitter" width=100px></a>
+                        <a href="#"><img src="https://th.bing.com/th/id/OIP.ORP4ilqkqi4S-E0OFSIU4AHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Instagram"></a>
+                    </div>
+                </div>
+        </footer>
+    <script>
+        function filterPlaces() {
+            let filterValue = document.getElementById("filter").value;
+            let places = document.querySelectorAll(".place");
+
+            places.forEach(place => {
+                if (filterValue === "all" || place.getAttribute("data-location") === filterValue) {
+                    place.style.display = "block";
+                } else {
+                    place.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
